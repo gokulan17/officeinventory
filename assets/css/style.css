@@ -1,0 +1,161 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;1,100&display=swap');
+
+:root{
+    --primary-color:rgb(255, 255, 255);
+    --primary-font: sans-serif;
+    --font-color:#023b4b;
+}
+::placeholder{
+    color:#161616;
+}
+.head-title{
+    font-size:28px;
+    background-color: var(--font-color);
+    color: var(--primary-color);
+    font-family: var(--primary-font);
+    height:60px;
+    z-index: 999;
+    top:0px;  
+}
+.form-content{
+    width:40vw;
+    margin-left: 30px;
+    padding: 40px;
+}
+.body-content{
+    top:60px;
+    position:absolute;
+    width: calc(100vw - 256px);
+    margin-left: 256px;
+}
+.head-title label{
+    cursor: pointer;
+}
+.lable-font
+{
+    font-size: 1rem;
+    color: var(--font-color);
+}
+.form-title
+{
+    font-size: 1.5rem;
+}
+.table-title
+{
+    font-size: 1.5rem;
+}
+.body-font{
+    font-family:var(--primary-font);
+    color: var(--font-color);
+    background-color: #f2f6fc; 
+}
+.table-content{
+    margin-left: 30px;
+    padding:15px;
+    width:calc(100vw - 400px);
+}
+/* -----------nav-bar-side------------ */
+.side-nav{
+    background-color:#f8f9fa;
+    width:256px;
+    left: 0rem;
+    top: 60px;
+    bottom: 0;
+    /* z-index:999; */
+}
+.side-nav a{
+    color: rgb(0, 0, 0);
+    font-size: 1.3rem;
+    font-family: var(--primary-font);
+}
+.side-nav a:hover{
+    background-color: #cccccc;
+}
+#alertMsg{
+    position: fixed;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.search-box {
+	width: 200px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #ccc;
+}
+  
+ 
+/* page no*/
+
+
+
+@media only screen and (max-width:1024px) 
+{
+    .head-title{
+        height: 60px;
+        font-size:18px;
+        padding: 5px 0px;
+    }
+    .tittle{
+        padding: 0px;
+    }
+    .menu-bar{
+        left: 12px;
+    }
+    .side-nav{
+        width:256px;
+        left: -256px;
+        font-size: 1rem;
+        top:60px;
+        z-index: 999;
+        transition: all 0.9s ease-in-out; 
+    }
+    #check:checked +.side-nav{
+        left:0px;
+    }
+    .form-title{
+        font-size: 1.3rem;
+        padding: 20px;
+    }
+    .body-content{
+        margin:auto;
+    }
+    .form-content{
+        margin:18px;
+        padding: 15px;
+        width:90vw;
+    }
+    .table-content{
+        margin:18px;
+        padding:15px;
+        width:100vw;
+    }
+}
+@media only screen and (max-width:570px){
+    .head-title{
+        font-size:15px;
+        padding:2px 0px;
+    }
+    .tittle{
+        padding: 10px 0px;
+    }
+    .form-title{
+        font-size: 1rem;
+        padding-bottom: 3px;
+    } 
+    .table-content{
+        margin:5px;
+        width:calc(100vw - 20px);
+    }
+    .search-box {
+        padding:15px 0px;
+        border-bottom: 1px solid #ccc;
+    }
+    .search-btn{
+        padding-top: 15px;
+    }
+   
+}
+
+
