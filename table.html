@@ -1,0 +1,116 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Office Inventory Table</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- icon import -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- external css file  -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- online bootstrap import -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous"> -->
+    <!-- ofline bootstrap import -->
+    <link rel="stylesheet" href="assets/bootstrap-4.6.0-dist/css/bootstrap.min.css">
+    <!-- link for datepicker -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+
+
+</head>
+
+<body class="body-font">
+    <div class="container-fluid head-title position-fixed">
+        <div class="row">
+            <label for="check" class="mb-0 p-3"><i class="fa fa-bars d-xl-none h5 "></i></label>
+            <div class="col text-center tittle p-0 py-3 py-lg-2">OFFICE INVENTORY MANAGEMENT</div>
+        </div>
+        <input type="checkbox" id="check" hidden>
+        <div class="side-nav position-fixed shadow-lg pt-3">
+            <a class=" d-block text-decoration-none p-3 text-center" href="form.html">Office
+                Inventory Form</a>
+            <a class="d-block text-decoration-none p-3 text-center text-info" href="table.html">Office
+                Inventory Table</a>
+        </div>
+    </div>
+    <div class="body-content ">
+        <div class="table-content  shadow-lg  bg-white rounded">
+            <div class="form-title text-center ">
+                <lable>INVENTORY REGISTRATION TABLE</lable>
+            </div>
+
+            <table class="table table-bordered table-striped table-hover table-responsive-md" id="inventoryDataTable">
+                <div class="py-4 px-0 text-center d-block-flex justify-content-lg-between container-fluid d-md-inline-flex"
+                    id="search-box">
+                    <div>
+                        <input type="text" class="search-box" id="inventoryName" autocomplete="off"
+                            placeholder="Search Inventory Name" >
+                    </div>
+                    <div>
+                        <select class="search-box" id="Category">
+                            <option value="" disabled selected>Search By Category</option>
+                            <option value="Furniture">Furniture</option>
+                            <option value="Electronics">Electronics</option>
+                            <option value="Electrical">Electrical</option>
+                            <option value="Others">Others</option>
+                        </select>
+                    </div>
+                    <div>
+                        <input type="text" class="search-box" id="start" autocomplete="off" placeholder="Start Date">
+                    </div>
+                    <div>
+                        <input type="text" class="search-box" id="end" autocomplete="off" placeholder="End Date">
+                    </div>
+                    <div class="search-btn">
+                        <span class="btn btn-info mr-3 " onclick="getFilterValue('CreatedDate',0)">
+                            <i class="fa fa-search"></i></span>
+                        <span class="btn btn-info " onclick="reset()"><i class="fa fa-undo"></i></span>
+                    </div>
+                </div>
+                <thead>
+                    <tr class="bg-info">
+                        <th class="btn w-100 border-0 font-weight-bold"
+                            onclick="getFilterValue('SerialNumber',0)">Serial Number</th>
+                        <th>Inventory Name</th>
+                        <th>Category</th>
+                        <th class="btn w-100 border-0 font-weight-bold" onclick="getFilterValue('Status',0)">
+                            Status</th>
+                        <th class="text-center justify-content-center">Purchase Date</th>
+                        <th class="text-left">Age</th>
+                        <th class="text-center " colspan="2">Action</th>
+                    </tr>
+                </thead>
+                <tbody id="inventoryTable"></tbody>
+            </table>
+            <div class="container-fluid">
+                <div class="row ">
+                    <div class=" col justify-content-start">
+                        <label for="shows">Show</label>     
+                        <select id="shows" onchange="getFilterValue('CreatedDate',0)">
+                            <option value=5>5</option>
+                            <option value=25>25</option>
+                            <option value=50>50</option>
+                            <option value=100>100</option>
+                        </select>
+                    </div>
+                    <div class=" col pagination justify-content-end">
+                        <div class="btn-group row">
+                            <!-- <button type="button" class="btn btn-info  m-1" onclick="nav('prev')" id="prevbtn">Prev</button> -->
+                            <div id="pageno"></div>
+                            <!-- <button type="button" class="btn btn-info  m-1" onclick="nav('next')" id="nextbtn">Next</button> -->
+                        </div> 
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <script src="./assets/js/table.js"></script>
+    <script src="assets/bootstrap-4.6.0-dist/js/jquery.min.js"></script>
+    <script src="assets/bootstrap-4.6.0-dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>
